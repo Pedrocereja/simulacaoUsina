@@ -18,7 +18,7 @@ respostaImpulso, tempo = step(Nge, t)
 plt.plot(tempo, respostaImpulso)
 plt.show()
 
-bode(Nge, Hz = True)
+bode(Nge, Hz=True)
 plt.show()
 
 rlocus(Nge)
