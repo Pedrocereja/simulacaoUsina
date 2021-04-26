@@ -15,17 +15,21 @@ Nge = a*b*c
 print(Nge)
 
 t = np.linspace(0, 100, 1000)
-respostaImpulso, tempo = step(Nge, t)
-plt.plot(tempo, respostaImpulso)
+respostaDegrau, tempo = step(Nge, t)
+plt.plot(tempo, respostaDegrau)
+plt.savefig("results/respostaDegrau.png")
 plt.show()
 
 bode(Nge, Hz=True)
+plt.savefig("results/bodePlot.png")
 plt.show()
 
 rlocus(Nge)
+plt.savefig("results/rootLocus.png")
 plt.show()
 
 Ngerealimentado = Nge/(1+Nge)
 r, t = step(Ngerealimentado)
 plt.plot(t, r)
+plt.savefig("results/respostaDegrauRealimentado.png")
 plt.show()
