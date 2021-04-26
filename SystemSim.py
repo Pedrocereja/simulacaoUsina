@@ -14,8 +14,9 @@ c = tf(1, [Th, 1])
 Nge = a*b*c
 print(Nge)
 
-t = np.linspace(0, 100, 1000)
-respostaDegrau, tempo = step(Nge, t)
+timeinSeconds = np.linspace(0, 100, 1000)
+
+respostaDegrau, tempo = step(Nge, timeinSeconds)
 plt.plot(tempo, respostaDegrau)
 plt.savefig("results/respostaDegrau.png")
 plt.show()
@@ -29,7 +30,7 @@ plt.savefig("results/rootLocus.png")
 plt.show()
 
 Ngerealimentado = Nge/(1+Nge)
-r, t = step(Ngerealimentado)
-plt.plot(t, r)
+respostaDegrauRealimentado, tempo = step(Ngerealimentado)
+plt.plot(tempo, respostaDegrauRealimentado)
 plt.savefig("results/respostaDegrauRealimentado.png")
 plt.show()
